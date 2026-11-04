@@ -1,0 +1,6 @@
+{
+  "name": "jumprope-demo",
+  "private": true,
+  "type": "module",
+  "description": "PyCon 2026 GDG booth demo - Air Jump Rope Battle (Web AI, pure frontend)"
+}

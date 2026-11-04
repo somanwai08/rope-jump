@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>空氣跳繩大作戰 — Web AI Demo</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="view"></canvas>
+
+  <div id="hud" class="panel hidden">
+    <div class="hud-tl">
+      <div class="big" id="score">0</div>
+      <div class="dim">連擊 <span id="combo">x0</span></div>
+    </div>
+    <div class="hud-tr">
+      <div class="big"><span id="timer">60</span>s</div>
+      <div class="dim">命 <span id="lives">3</span>・繩速 <span id="speedv">0.8</span></div>
+    </div>
+    <div class="hud-bl" id="mode-label"></div>
+  </div>
+
+  <div id="msg" class="hidden"></div>
+
+  <div id="menu" class="panel">
+    <h1>空氣跳繩大作戰</h1>
+    <p class="slogan">這條繩子不存在——AI 只在你的瀏覽器裡。</p>
+    <div class="btns">
+      <button id="btn-cam" class="primary">攝影機開始（正式玩法）</button>
+      <button id="btn-sim">無攝影機測試模式</button>
+      <button id="btn-qa">執行自動測試</button>
+    </div>
+    <p class="dim" id="statusline">就緒。</p>
+    <div class="help">
+      站到畫面中央、全身入鏡（含腳）。發光繩子轉到腳底前跳起來。<br>
+      繩子過腳底你還在地上＝絆腳（3 次結束）；60 秒內拼最高分。<br>
+      影像全程只在瀏覽器內處理，不會上傳。
+    </div>
+    <div id="lb">
+      <h3>排行榜 TOP 10</h3>
+      <ol id="lb-list"></ol>
+    </div>
+  </div>
+
+  <div id="result" class="panel hidden">
+    <h2>本局結束</h2>
+    <div class="r-grid">
+      <div>得分 <b id="r-score">0</b></div>
+      <div>跳數 <b id="r-jumps">0</b></div>
+      <div>最高連擊 <b id="r-combo">x0</b></div>
+      <div>最佳紀錄 <b id="r-best">0</b></div>
+    </div>
+    <p id="newbest" class="hidden">🏆 新紀錄！</p>
+    <input id="name" maxlength="12" placeholder="輸入暱稱上榜">
+    <div class="btns">
+      <button id="btn-save" class="primary">上榜</button>
+      <button id="btn-retry">再來一次（R）</button>
+      <button id="btn-menu2">回主畫面</button>
+    </div>
+  </div>
+
+  <div id="qaout" class="panel hidden">
+    <h2>自動測試報告（無頭模擬 60 秒對局）</h2>
+    <pre id="qaout-body"></pre>
+    <div class="btns"><button id="btn-qa-close">關閉</button></div>
+  </div>
+</div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

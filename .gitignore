@@ -1,0 +1,11 @@
+# Large AI runtime assets (MediaPipe WASM + pose model, ~27MB total)
+# Fetch them by running: jumprope-demo/vendor_download.ps1
+jumprope-demo/vendor/
+jumprope-demo/assets/models/
+
+# Node
+node_modules/
+
+# OS junk
+Thumbs.db
+Desktop.ini
